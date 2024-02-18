@@ -2,14 +2,15 @@
   "version": 2,
   "builds": [
     {
-      "src": "./api/index.ts",
-      "use": "@vercel/node"
+      "src": "api",
+      "use": "@now/node-server",
+      "command": "npm run start"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/"
+      "dest": "/api/$1"
     }
   ]
 }
