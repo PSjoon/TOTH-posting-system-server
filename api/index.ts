@@ -6,9 +6,9 @@ import { viewArticle } from "./viewArticle"
 import cors from "cors"
 
 const app = express()
+app.use(cors())
 dotenv.config({ path: "../.env" })
 dotenv.config({})
-app.use(cors())
 
 const port = process.env.PORT ? parseInt(process.env.PORT, 10) : 3334
 
@@ -30,5 +30,3 @@ try {
 } catch (error) {
   console.log(error)
 }
-
-export default app
